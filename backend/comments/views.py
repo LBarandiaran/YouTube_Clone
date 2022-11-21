@@ -14,9 +14,11 @@ def get_all_comments(request, video_id):
     serializer = CommentSerializer(comments, many=True)
     return Response(serializer.data)
 
-# @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# def user_comments(request):
-#     print(
-#         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def user_comments(request):
+    serialiazer = CommentSerializer(data=request.data)
+    serialiazer.is_valid(raise_exception=True)
+    serialiazer.save(user=request.user)
+    return Response(serialiazer.data)
     
