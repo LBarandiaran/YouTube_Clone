@@ -302,6 +302,99 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "YoutubeCloneFront",
+			"item": [
+				{
+					"name": "Search for Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.googleapis.com/youtube/v3/search?q=milesdavis&key=AIzaSyD5lenf3Fg754H5O5CaUtYYA37XbpZQ4X8&part=snippet&type=video&maxResults=10",
+							"protocol": "https",
+							"host": [
+								"www",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"youtube",
+								"v3",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "milesdavis"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyD5lenf3Fg754H5O5CaUtYYA37XbpZQ4X8"
+								},
+								{
+									"key": "part",
+									"value": "snippet"
+								},
+								{
+									"key": "type",
+									"value": "video"
+								},
+								{
+									"key": "maxResults",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search for Related Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.googleapis.com/youtube/v3/search?type=video&relatedToVideoId=Q3_3J3HstvA&key=AIzaSyD5lenf3Fg754H5O5CaUtYYA37XbpZQ4X8&part=snippet&maxResults=10",
+							"protocol": "https",
+							"host": [
+								"www",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"youtube",
+								"v3",
+								"search"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "video"
+								},
+								{
+									"key": "relatedToVideoId",
+									"value": "Q3_3J3HstvA"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyD5lenf3Fg754H5O5CaUtYYA37XbpZQ4X8"
+								},
+								{
+									"key": "part",
+									"value": "snippet"
+								},
+								{
+									"key": "maxResults",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
