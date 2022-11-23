@@ -1,3 +1,6 @@
+# LocalKey API file
+LocalKey.js
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
