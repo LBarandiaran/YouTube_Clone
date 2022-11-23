@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d4409d57-7119-4339-bfae-1f3a18bc6341",
+		"_postman_id": "757a6d04-ed68-45c8-891d-c151e2dbfd88",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -151,8 +151,8 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU2ODM5LCJpYXQiOjE2NDcyOTI4MzksImp0aSI6ImJjYzJhZTUzOTRlYzQ3OThiNjI0YTcwYTYzYjcxOThmIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJqanZlZ2EiLCJmaXJzdF9uYW1lIjoiIn0.l9ATW5CpWF2TGniqVgU1I-a8LkuqgLQ4ok3tJh6asAA",
-								"type": "text"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MjQ5NTUyLCJpYXQiOjE2NjgzODU1NTIsImp0aSI6ImJhNmI5N2FmZTA5YzRjZjI4YTU3ODFkZjg0MjIwZjZlIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.UQigFHcZ1vfixh63ngk2p40xY2TydA-zY6cm7dHpSgs",
+								"type": "default"
 							}
 						],
 						"body": {
@@ -190,13 +190,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU3MjczLCJpYXQiOjE2NDcyOTMyNzMsImp0aSI6IjIyMDQ4YTg2NzEzMTQyMmZhZjJmNDNmYmI2MTExZDg2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.DeTe47E7-9eCr7xKE22m3CvFMDj0Sxye5A6ndwJ024M",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5MjQ5NTUyLCJpYXQiOjE2NjgzODU1NTIsImp0aSI6ImJhNmI5N2FmZTA5YzRjZjI4YTU3ODFkZjg0MjIwZjZlIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.UQigFHcZ1vfixh63ngk2p40xY2TydA-zY6cm7dHpSgs",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"make\": \"Ford\",\n    \"model\": \"F150\",\n    \"year\": 1999\n}",
+							"raw": "{\n    \"make\": \"ferrari\",\n    \"model\": \"testarossa\",\n    \"year\": 1988\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -216,6 +216,85 @@
 							"path": [
 								"api",
 								"cars",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "GET all comments (unprotected)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/123456/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"123456",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User Comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5ODU3OTgxLCJpYXQiOjE2Njg5OTM5ODEsImp0aSI6IjIyM2QxYzJiZGY4MjRmN2U5MGU4MDBhNzg0ZmRmMjE3IiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.caM6sJnv2zJhl9UOfICpc6JfZa57hwmELAy3rUMgvE0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5ODU3OTgxLCJpYXQiOjE2Njg5OTM5ODEsImp0aSI6IjIyM2QxYzJiZGY4MjRmN2U5MGU4MDBhNzg0ZmRmMjE3IiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.caM6sJnv2zJhl9UOfICpc6JfZa57hwmELAy3rUMgvE0",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": 3,\r\n    \"video_id\": \"123456\",\r\n    \"text\": \"i've seen better\",\r\n    \"likes\": 1,\r\n    \"dislikes\": -1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
 								""
 							]
 						}
