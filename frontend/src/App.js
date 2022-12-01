@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
+import Searchbar from "./components/SearchBar/SearchBar";
 import Footer from "./components/Footer/Footer";
 
 // Util Imports
@@ -18,6 +19,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <Searchbar />
       <Routes>
         <Route
           path="/"

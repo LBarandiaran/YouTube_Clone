@@ -1,27 +1,47 @@
 import { useState } from "react";
 
-const useCustomForm = (initialValues = {}, onSubmit) => {
-  const [formData, setFormValues] = useState(initialValues);
+const useForm = (callback) => {
+  const [formValues, setFormValues] = useState({});
 
-  const handleInputChange = (e) => {
-    e.persist();
-    if (e.target.name === "isStudent") {
-      setFormValues({ ...formData, [e.target.name]: e.target.checked });
-    } else {
-      setFormValues({ ...formData, [e.target.name]: e.target.value });
-    }
-  };
+  const handleChange = (event) => {
+    event.persist();
+    setFormValues({...formValues, [event.target.name]: event.target.value });
+  }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    callback();
+  }
 
-  const reset = () => {
-    setFormValues(initialValues);
-  };
+  return {formValues, handleChange, handleSubmit}
+}
 
-  return [formData, handleInputChange, handleSubmit, reset];
-};
+export default useForm;
 
-export default useCustomForm;
+// ***This is the orginial starter code, I replaced with code from video lecture****
+
+// const useCustomForm = (initialValues = {}, onSubmit) => {
+//   const [formData, setFormValues] = useState(initialValues);
+
+//   const handleInputChange = (e) => {
+//     e.persist();
+//     if (e.target.name === "isStudent") {
+//       setFormValues({ ...formData, [e.target.name]: e.target.checked });
+//     } else {
+//       setFormValues({ ...formData, [e.target.name]: e.target.value });
+//     }
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     onSubmit(formData);
+//   };
+
+//   const reset = () => {
+//     setFormValues(initialValues);
+//   };
+
+//   return [formData, handleInputChange, handleSubmit, reset];
+// };
+
+// export default useCustomForm;
