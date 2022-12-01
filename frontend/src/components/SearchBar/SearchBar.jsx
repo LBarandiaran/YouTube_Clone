@@ -14,10 +14,12 @@ function searchVideos(event){
 }
 
     return (
-        <form onSubmit={searchVideos}>
+        <div className="box">
+            <form onSubmit={searchVideos}>
             <input placeholder='Search Videos' type='text' value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
             <button type='submit' >Search</button>
         </form>
+        </div>
     );
 }
 
