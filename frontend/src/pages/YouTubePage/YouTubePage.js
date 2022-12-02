@@ -10,7 +10,8 @@ const YouTubePage = () => {
     useEffect(() => {
         const fetchVideos = async () => {
           
-            let response = await axios.get('https://www.googleapis.com/youtube/v3/search?q=milesdavis&key=AIzaSyD5lenf3Fg754H5O5CaUtYYA37XbpZQ4X8&part=snippet&type=video&maxResults=6') 
+            let response = await axios.get('https://www.googleapis.com/youtube/v3/search?q=milesdavis&key=AIzaSyD5lenf3Fg754H5O5CaUtYYA37XbpZQ4X8&part=snippet&type=video&maxResults=6');
+            console.log(response.data);
             setVideos(response.data);
         };
         fetchVideos();
@@ -19,7 +20,12 @@ const YouTubePage = () => {
     return (
         <div className="container">
       <h1>Videos</h1>
-      {videos.thumbnails}
+      {videos &&
+        videos.map((video) => (
+            <p key={video.id}>
+                {video.snippet.thumbnails}
+            </p>
+        ))}
     </div>
     );
 
