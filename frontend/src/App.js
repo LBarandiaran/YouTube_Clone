@@ -25,9 +25,9 @@ function App() {
         <Route
           path="/"
           element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
+            // <PrivateRoute>
+              <YouTubePage />
+            // </PrivateRoute>
           }
         />
         <Route path="/api/auth/register" element={<RegisterPage />} />
