@@ -30,7 +30,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/api/auth/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
