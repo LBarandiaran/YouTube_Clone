@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {KEY} from './src/localKey.js'
 
 
 const YouTubePage = () => {
@@ -10,7 +11,7 @@ const YouTubePage = () => {
     useEffect(() => {
         const fetchVideos = async () => {
           
-            let response = await axios.get('https://www.googleapis.com/youtube/v3/search?q=milesdavis&key=AIzaSyD5lenf3Fg754H5O5CaUtYYA37XbpZQ4X8&part=snippet&type=video&maxResults=6');
+            let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=milesdavis&key={KEY}&part=snippet&type=video&maxResults=6`);
             console.log(response.data);
             setVideos(response.data);
         };
