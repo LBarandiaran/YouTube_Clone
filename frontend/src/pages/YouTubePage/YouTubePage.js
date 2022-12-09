@@ -11,7 +11,7 @@ const YouTubePage = () => {
     useEffect(() => {
         const fetchVideos = async () => {
           
-            let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=milesdavis&key={KEY}&part=snippet&type=video&maxResults=6`);
+            let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=milesdavis&key=${KEY}&part=snippet&type=video&maxResults=6`);
             console.log(response.data);
             setVideos(response.data);
         };
