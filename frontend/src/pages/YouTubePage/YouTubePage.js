@@ -25,7 +25,7 @@ const YouTubePage = () => {
         videos.map((video) => (
             <>
             <h1>{video.snippet.title}</h1>
-            <img src={video.snippet.thumbnails.medium}/>
+            <img src={video.snippet.thumbnails.medium.url}/>
             </>
             
 
