@@ -6,9 +6,9 @@ import "./App.css";
 import YouTubePage from "./pages/YouTubePage/YouTubePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import SearchResultsPage from "./pages/SearchResultsPage";
-import VideoPage from "./pages/VideoPage";
-import YouTubePage from "./pages/YouTubePage";
+// import SearchResultsPage from "./pages/SearchResultsPage/SearchResultsPage";
+// import VideoPage from "./pages/VideoPage/VideoPage";
+
 
 
 // Component Imports
@@ -29,8 +29,8 @@ function App() {
         <Route path="/" element={<YouTubePage />} />        
         <Route path="/api/auth/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/searchresults" element={<SearchResultsPage />} />
-        <Route path="/videopage" element={<VideoPage />} />
+        {/* <Route path="/searchresults" element={<SearchResultsPage />} /> */}
+        <Route path="/videopage/:videoID" element={<VideoPage />} />
       </Routes>
       <Footer />
     </div>
